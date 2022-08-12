@@ -1,0 +1,27 @@
+#title-text {
+	font-size: x-large;
+	text-align: center;
+}
+
+#image {
+	width: 200px;
+}
+
+#wrapper {
+	text-align: center;
+}
+.hide {
+	opacity: 0;
+}
+
+.show {
+	transition: all 3s cubic-bezier(0.075, 0.82, 0.165, 1);
+	opacity: 1;
+}
+
+.leaveButton {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	background-color: transparent;
+}
