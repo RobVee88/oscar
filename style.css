@@ -25,3 +25,20 @@
 	left: 5px;
 	background-color: transparent;
 }
+
+.controls {
+	position: fixed;
+	bottom: 10px;
+	left: 10px;
+	width: 300px;
+}
+
+.buttonLine {
+	display: flex;
+	justify-content: space-around;
+}
+
+.controlButton {
+	width: 4rem;
+	height: 2rem;
+}

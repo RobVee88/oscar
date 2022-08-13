@@ -52,3 +52,24 @@ window.addEventListener("keydown", (event) => {
 			break;
 	}
 });
+
+const buttonLeft = document.querySelector("#buttonLeft");
+const buttonRight = document.querySelector("#buttonRight");
+const buttonUp = document.querySelector("#buttonUp");
+const buttonDown = document.querySelector("#buttonDown");
+
+buttonLeft.addEventListener("click", () => {
+	player.direction = "left";
+});
+
+buttonRight.addEventListener("click", () => {
+	player.direction = "right";
+});
+
+buttonUp.addEventListener("click", () => {
+	player.direction = "up";
+});
+
+buttonDown.addEventListener("click", () => {
+	player.direction = "down";
+});
