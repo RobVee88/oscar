@@ -5,11 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="../style.css" />
-		<link rel="stylesheet" href="flight-simulator.css" />
-		<title>Flight Simulator</title>
+		<title>Survive the Killer!</title>
 	</head>
 	<body style="height: 100%; position: relative">
 		<h1 class="leaveButton"><a href=".\..\index.html">leave</a></h1>
+		<h1 class="hide" id="killedMessage" style="position: absolute; left: 50%; top: 50%; font-size: 4rem">your dead refresh to respawn</h1>
 		<div class="controls">
 			<div class="buttonLine" id="buttonUp"><button class="controlButton">Up</button></div>
 			<div class="buttonLine"><button class="controlButton" id="buttonLeft">Left</button> <button class="controlButton" id="buttonRight">Right</button></div>
@@ -17,7 +17,8 @@
 		</div>
 		<canvas></canvas>
 		<script src="../shared/classes.js"></script>
-		<script src="flight-simulator.js"></script>
+		<script src="./survive-the-killer.js"></script>
 		<script src="../shared/controls.js"></script>
+		<script src="../shared/util.js"></script>
 	</body>
 </html>

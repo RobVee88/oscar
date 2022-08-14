@@ -16,63 +16,84 @@ class Sprite {
 	}
 }
 
-class Plane extends Sprite {
-	constructor({ position, direction, imageSrc }) {
+class Player extends Sprite {
+	constructor({ position, direction, imageSrc, speed, width, height, autoMove }) {
 		super({
 			position,
 			imageSrc,
 		});
 
 		this.direction = direction;
-		this.width = 50;
-		this.height = 50;
+		this.width = width;
+		this.height = height;
+		this.speed = speed;
+		this.autoMove = autoMove;
 	}
 
 	update() {
 		this.draw();
-		switch (this.direction) {
-			case "left":
-				this.position.x -= 2;
-				break;
-			case "right":
-				this.position.x += 2;
-				break;
-			case "up":
-				this.position.y -= 2;
-				break;
-			case "down":
-				this.position.y += 2;
-				break;
+		if (this.autoMove) {
+			switch (this.direction) {
+				case "left":
+					this.position.x -= this.speed;
+					break;
+				case "right":
+					this.position.x += this.speed;
+					break;
+				case "up":
+					this.position.y -= this.speed;
+					break;
+				case "down":
+					this.position.y += this.speed;
+					break;
+			}
 		}
 	}
 }
 
-class Sonic extends Sprite {
-	constructor({ position, direction, imageSrc }) {
+class NPC extends Sprite {
+	constructor({ position, imageSrc, speed, width, height }) {
 		super({
 			position,
 			imageSrc,
 		});
 
-		this.direction = direction;
-		this.width = 100;
-		this.height = 100;
+		this.width = width;
+		this.height = height;
+		this.speed = speed;
+		this.delayCounter = 0;
+		this.direction = 0;
 	}
 
 	update() {
 		this.draw();
+		this.delayCounter++;
+		if (this.delayCounter >= 100) {
+			this.direction = Math.floor(Math.random() * 4);
+			this.delayCounter = 0;
+		} else {
+			if (player.position.x > this.position.x) {
+				this.direction = 1;
+			} else if (player.position.x < this.position.x) {
+				this.direction = 0;
+			} else if (player.position.y < this.position.y) {
+				this.direction = 2;
+			} else {
+				this.direction = 3;
+			}
+		}
 		switch (this.direction) {
-			case "left":
-				this.position.x -= 8;
+			case 0:
+				this.position.x -= this.speed;
 				break;
-			case "right":
-				this.position.x += 8;
+			case 1:
+				this.position.x += this.speed;
 				break;
-			case "up":
-				this.position.y -= 8;
+			case 2:
+				this.position.y -= this.speed;
 				break;
-			case "down":
-				this.position.y += 8;
+			case 3:
+				this.position.y += this.speed;
 				break;
 		}
 	}
