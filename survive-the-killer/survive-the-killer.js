@@ -39,7 +39,7 @@ const killer = new NPC({
 	imageSrc: "./assets/killer.png",
 	width: 100,
 	height: 100,
-	speed: 1,
+	speed: 2,
 });
 
 function animate() {

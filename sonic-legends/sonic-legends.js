@@ -24,7 +24,7 @@ const player = new Player({
 	imageSrc: "./assets/New Piskel.png",
 	width: 100,
 	height: 100,
-	speed: 8,
+	speed: 16,
 });
 
 function animate() {
