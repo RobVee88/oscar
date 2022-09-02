@@ -27,7 +27,7 @@ const player = new Player({
 	imageSrc: "./assets/survivor.png",
 	width: 100,
 	height: 100,
-	speed: 10,
+	speed: 19,
 	autoMove: false,
 });
 
@@ -40,7 +40,32 @@ const killer = new NPC({
 	width: 100,
 	height: 100,
 	speed: 2,
+	random: false,
 });
+
+// const killer2 = new NPC({
+// 	position: {
+// 		x: 800,
+// 		y: 500,
+// 	},
+// 	imageSrc: "./assets/killer.png",
+// 	width: 100,
+// 	height: 100,
+// 	speed: 3,
+// 	random: true,
+// });
+
+// const killer3 = new NPC({
+// 	position: {
+// 		x: 800,
+// 		y: 0,
+// 	},
+// 	imageSrc: "./assets/killer.png",
+// 	width: 100,
+// 	height: 100,
+// 	speed: 3,
+// 	random: true,
+// });
 
 function animate() {
 	if (killed === false) {
@@ -52,6 +77,9 @@ function animate() {
 	c.fillRect(0, 0, canvas.width, canvas.height);
 	player.update();
 	killer.update();
+	// killer2.update();
+	// killer3.update();
+
 	if (characterCollision({ character1: player, character2: killer })) {
 		killed = true;
 		killedMessage.className = "show";

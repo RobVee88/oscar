@@ -4,7 +4,7 @@ const chatEnter = document.getElementById("chatEnter");
 
 const replies = ["can we be friends?", "bye", "hi", "im hungry"];
 const greetings = ["Hello", "", "im a bot", "yes", "Hi", "guess  what", "", "im rich"];
-const bots = ["Bot"];
+const bots = ["kasper bot"];
 
 const chat = []; //string array of chat messages; {author: string, message: string}
 

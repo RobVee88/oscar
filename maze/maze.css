@@ -1,0 +1,7 @@
+#maze-canvas {
+	border: 1px solid black;
+}
+#maze-wrapper {
+	display: flex;
+	justify-content: center;
+}

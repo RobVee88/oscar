@@ -52,7 +52,7 @@ class Player extends Sprite {
 }
 
 class NPC extends Sprite {
-	constructor({ position, imageSrc, speed, width, height }) {
+	constructor({ position, imageSrc, speed, width, height, random }) {
 		super({
 			position,
 			imageSrc,
@@ -63,15 +63,16 @@ class NPC extends Sprite {
 		this.speed = speed;
 		this.delayCounter = 0;
 		this.direction = 0;
+		this.random = random;
 	}
 
 	update() {
 		this.draw();
 		this.delayCounter++;
-		if (this.delayCounter >= 100) {
+		if (this.delayCounter >= 100 && this.random) {
 			this.direction = Math.floor(Math.random() * 4);
 			this.delayCounter = 0;
-		} else {
+		} else if (!this.random) {
 			if (player.position.x > this.position.x) {
 				this.direction = 1;
 			} else if (player.position.x < this.position.x) {
