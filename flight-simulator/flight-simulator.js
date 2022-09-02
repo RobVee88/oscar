@@ -25,7 +25,7 @@ const player = new Player({
 	imageSrc: "./assets/B-17/Type-1/B-17.png",
 	width: 50,
 	height: 50,
-	speed: 2,
+	speed: 5,
 	autoMove: true,
 });
 
